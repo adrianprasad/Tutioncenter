@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load crispy_forms_filters %}
+
+{% load static %}
+{% block content %}
+    <form action="{% url 'userlogin' %}" method="post" class="form pt-5 pb-5" style="width:30%">
+      {% csrf_token %}
+        <div class="container">
+          <h1>Login</h1>
+          <input type="text"  name="username" class="form-control" placeholder="username"><br>
+          <input type="password"  name="password" class="form-control" placeholder="password"><br>
+          <button type="submit" class="btn btn-outline-info" style="margin-left:40%;">login</button><br>
+        </div>
+      </form>   
+{% endblock content %}

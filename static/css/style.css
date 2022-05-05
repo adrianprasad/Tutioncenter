@@ -1,0 +1,234 @@
+.topnav{
+    background-color:#333;
+    overflow:hidden
+}
+.topnav a{
+    float:left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+body{
+    background-image: url(' media/tutors/tuition.jpg'); /* The image used */
+    
+    height: 500px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+.topnav a:hover{
+    background-color: rgb(169, 233, 245);
+    color:black;
+}
+
+body{
+    background-color: rgb(202, 198, 198);
+}
+.container{
+    width:70%;
+    margin: 2rem auto;
+    
+}
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color:rgb(4, 160, 43);
+    text-shadow: #fff;
+    font-family: sans-serif;
+}
+h2{
+    font-size: 1rem;
+    font-weight: 700;
+    color:rgb(11, 167, 11);
+    font-family: sans-serif;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+thead{
+    width: 100%;
+    text-align: left;
+}
+th,td{
+    border: 1px solid rgb(150, 145, 145);
+}
+th{
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(4, 160, 51);
+    font-family: sans-serif;
+}
+td{
+    font-size: 15px;
+    font-weight: 550;
+    font-family: sans-serif;
+    color:rgb(37, 56, 37);
+}
+
+tr:nth-child(even){
+    background-color: #d8d8dd;
+}
+tr:nth-child(odd){
+    background-color: #f3f3f7;
+}
+tr:hover{
+    background-color: #c4eeb4;
+    transform: scale(1.12);
+}
+body{
+    background-color: rgb(202, 198, 198);
+}
+.container{
+    width:70%;
+    margin: 2rem auto;
+    
+}
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color:rgb(4, 160, 43);
+    text-shadow: #fff;
+    font-family: sans-serif;
+}
+h2{
+    font-size: 1rem;
+    font-weight: 700;
+    color:rgb(11, 167, 11);
+    font-family: sans-serif;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+thead{
+    width: 100%;
+    text-align: left;
+}
+th,td{
+    border: 1px solid rgb(150, 145, 145);
+}
+th{
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(26, 179, 26);
+    font-family: sans-serif;
+}
+td{
+    font-size: 15px;
+    font-weight: 550;
+    font-family: sans-serif;
+    color:rgb(0, 0, 0);
+}
+
+tr:nth-child(even){
+    background-color: #d8d8dd;
+}
+tr:nth-child(odd){
+    background-color: #f3f3f7;
+}
+tr:hover{
+    background-color: #c4eeb4;
+    transform: scale(1.12);
+}
+
+.topnav{
+    background-color: #333;
+    overflow:hidden
+}
+.topnav a{
+    float:left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+body{
+    background-color: white;
+}
+.topnav a:hover{
+    background-color: rgb(169, 233, 245);
+    color:black;
+}
+
+.topnav{
+    background-color: #333;
+    overflow:hidden
+}
+.topnav a{
+    float:left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+body{
+    background-color: white;
+}
+.topnav a:hover{
+    background-color: rgb(169, 233, 245);
+    color:black;
+}
+
+body{
+    background-color: rgb(202, 198, 198);
+}
+.container{
+    width:70%;
+    margin: 2rem auto;
+    
+}
+h1{
+    font-size: 2rem;
+    font-weight: 700;
+    color:rgb(4, 160, 43);
+    text-shadow: #fff;
+    font-family: sans-serif;
+}
+h2{
+    font-size: 1rem;
+    font-weight: 700;
+    color:rgb(11, 167, 11);
+    font-family: sans-serif;
+}
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+thead{
+    width: 100%;
+    text-align: left;
+}
+th,td{
+    border: 1px solid rgb(150, 145, 145);
+}
+th{
+    font-size: 15px;
+    font-weight: 500;
+    color: white;
+    background-color: rgb(4, 160, 51);
+    font-family: sans-serif;
+}
+td{
+    font-size: 15px;
+    font-weight: 550;
+    font-family: sans-serif;
+    color:rgb(37, 56, 37);
+}
+
+tr:nth-child(even){
+    background-color: #d8d8dd;
+}
+tr:nth-child(odd){
+    background-color: #f3f3f7;
+}
+tr:hover{
+    background-color: #c4eeb4;
+    transform: scale(1.12);
+}

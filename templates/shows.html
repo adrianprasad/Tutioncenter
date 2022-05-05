@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block content %}
+       
+    <div class="container"> 
+    <h1>Class Management System</h1>
+    
+    <table class="content-table">
+        <thead>
+            <tr>
+              
+                <th>TUTOR ID</th>
+                <th>TUTOR NAME</th>
+                <th>DOB</th>
+                <th>GENDER</th>
+                <th>GRADE</th>
+               
+                <th>EMAIL</th>
+                <th>CONTACT NO</th>
+                
+        
+                <th colspan="2">ACTION..</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for products in emp %}
+        <tr>
+        <td>{{products.id}}</td>
+        <td>{{products.Studentname}}</td>
+        <td>{{products.DOB}}</td>
+        <td>{{products.Gender}}</td>
+        <td>{{products.userClass.Grade}}</td>
+        <td>{{products.email}}</td>
+        <td>{{products.contactno}}</td>
+        
+        
+        
+
+        <td><a href="{% url 'edit_s' products.id %}">Edit</a>
+            <br>
+            <a href="{% url 'delete_s' products.id %}">Delete</a>
+        </td>
+
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>    
+{% endblock content %}
