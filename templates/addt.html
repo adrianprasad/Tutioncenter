@@ -8,7 +8,7 @@
   </div>
   <div class="col-ma-4"></div>
  <div>
-<form action="addtutor" method="POST" >
+<form action="{% url 'addtutor' %}" method="POST" enctype="multipart/form-data" >
     {% csrf_token %} 
     {{form|crispy}}
     

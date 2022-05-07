@@ -11,15 +11,14 @@
         <thead>
             <tr>
               
-                <th>TUTOR ID</th>
-                <th>TUTOR NAME</th>
+                <th>STUDENT ID</th>
+                <th>STUDENT NAME</th>
                 <th>DOB</th>
                 <th>GENDER</th>
                 <th>GRADE</th>
-               
                 <th>EMAIL</th>
                 <th>CONTACT NO</th>
-                
+                <th>IMAGE</th>
         
                 <th colspan="2">ACTION..</th>
             </tr>
@@ -31,10 +30,10 @@
         <td>{{products.Studentname}}</td>
         <td>{{products.DOB}}</td>
         <td>{{products.Gender}}</td>
-        <td>{{products.userClass.Grade}}</td>
+        <td>{{products.Grade}}</td>
         <td>{{products.email}}</td>
         <td>{{products.contactno}}</td>
-        
+        <td><img src="{{products.simage.url}}" style="width:70px;height:100px"></td>
         
         
 

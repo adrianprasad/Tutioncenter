@@ -3,63 +3,17 @@
 
 {% load static %}
 {% block content %}
-  <div class="container">
-    <h1>ENTER DETAILS </h1>
-<form method="post" action="{% url 'addstud' %}" enctype="multipart/form-data" style="width:30%; " >
-    {% csrf_token %}
-    <div class="form-group">
-        <label>Student Name</label>
-        <input type="text" name="student" class="form-control" placeholder="" required>
-    </div>
-    <br>
-    <div class="form-group">
-        <label>Date of birth</label>
-        <input type="date" name="dob" class="form-control" placeholder=" " required>
-    </div>
-    <br>
-    <div class="form-group">
-        <label>Gender</label>
-        <input type="radio" name="gender" value="male">Male
-        <input type="radio" name="gender" value="female">Female<br>
-    </div>
-    <br>
-    <div class="form-group">
-        <label>Grade</label>
-        <select name="grade" class="form-control">
-            {% for i in we %}
-            <option value="{{ i.id }}">
-                {{ i.Grade }}
-            </option>
-            {% endfor %}
-        </select>
-    </div>
-    <br>
-    <div class="form-group">
-        <label>Parent name</label>
-        <input type="text" name="Pname" class="form-control" placeholder=" " required>
-    </div>
-    <br>
-    <div class="form-group">
-        <label>email</label>
-        <input type="text" name="email" class="form-control" placeholder=" " required>
-    </div>
-    <br>
-    <div class="form-group">
-        <label>Contact number</label>
-        <input type="number" name="Contactno" class="form-control" Price=" " required>
-    </div>
-    <br>
+<div class="container">
+  <div><h1>Enter tutor Details</h1>
+  </div>
+  <div class="col-ma-4"></div>
+ <div>
+<form action="{% url 'addstud' %}" method="POST" enctype="multipart/form-data" >
+    {% csrf_token %} 
+    {{form|crispy}}
     
-    <div class="form-group">
-        <label>Image</label>
-        <input type="file" class="form-control"   name="image"  required>
-    </div>
-    
-   
-    <div class="form-group">
-        <button type="submit" class="btn btn-outline-success">submit</button>
-    </div>
-    <br>
+    <button type="submit">Submit</button>
+  </div>
 </form>
-</div>  
+</div>   
 {% endblock content %}

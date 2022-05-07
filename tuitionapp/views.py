@@ -46,7 +46,7 @@ def usercreate(request):
                     email= email)
                 user.save()
                 print("successed")
-                return redirect('addstud')
+                return redirect('adds')
         else:
             messages.info(request,'Password doesnt match!!!!')
             print("password is not matching...")
@@ -88,9 +88,10 @@ def addclass(request):
         if form.is_valid():
             print('12')
             form.save()
+            
             return redirect ('show_c')
-    form=userC()
-    return render(request,'addc.html',{'form':form})  
+    form=()
+    return render(request,'addc.html',{'form':form,})  
 
 #Show Employee
 @login_required
@@ -107,7 +108,8 @@ def edit_c (request,pk):
         if form.is_valid():
             form.save()
             return redirect('show_c')
-    return render(request, 'editc.html',{'form':form})
+    return render(request,'editc.html',{'form':form})
+
 
 #delete
 @login_required
@@ -115,80 +117,120 @@ def delete_c(request,pk):
     form=userClass.objects.get(id=pk)
     form.delete()
     return redirect('show_c')
+#ADD Student
+def adds(request):
+    form=Stud()   
+    return render(request,'adds.html',{'form':form})
+            
+def addstud(request):
+    print('f9')
+    if request.method=='POST':
+        print('10')
+        form=Stud(request.POST,request.FILES,)
+        if form.is_valid():
+            print('12')
+            form.save()
+           
+            return redirect ('userlogin')
+    form=()
+    return render(request,'adds.html',{'form':form,})  
+
+#Show Employee
+def show_s (request): 
+    emp=Student.objects.all()
+    return render(request, 'shows.html',{'emp':emp})
+#edit
+def edit_s (request,pk): 
+    fo=Student.objects.get(id=pk)
+    form=Stud(instance=fo)
+    if request.method=='POST':
+        form=Stud(request.POST,request.FILES,instance=fo)
+        if form.is_valid():
+            form.save()
+            return redirect('show_s')
+    return render(request, 'edits.html',{'form':form})
+
+
+
+#delete
+def delete_s(request,pk):
+    form=Student.objects.get(id=pk)
+    form.delete()
+    return redirect('show_s')
 
 
 # add product
-@login_required
-def adds(request):
-    if request.user.is_authenticated:
+# @login_required
+# def adds(request):
+#     if request.user.is_authenticated:
         
-        e=userClass.objects.all()
-        context= {'we':e}
-        return render(request,'adds.html',context)
-    return redirect('login')
-@login_required
-def addstud(request):
-    if request.method == 'POST':
-        sname=request.POST['student']
-        dob=request.POST['dob']
-        gender=request.POST['gender']
-        gnam=request.POST['grade']
-        gnam=userClass.objects.get(id=gnam)
-        pnam=request.POST['Pname']
-        email=request.POST['email']
-        cn=request.POST['Contactno']
-        pimage = request.FILES['image']
-        stu=Student(Studentname=sname,
-            DOB=dob,
-            Gender=gender,
-            Grade=gnam,
-            Parentname=pnam,
-            email=email,
-            contactno=cn,
-            simage=pimage,
-            )
-        stu.save()
-        print('success')
-        return redirect('userlogin')
-    ve=userClass.objects.all()
-    return render(request,'adds.html',{'e':ve} )
+#         e=userClass.objects.all()
+#         context= {'we':e}
+#         return render(request,'adds.html',context)
+#     return redirect('login')
+# @login_required
+# def addstud(request):
+#     if request.method == 'POST':
+#         sname=request.POST['student']
+#         dob=request.POST['dob']
+#         gender=request.POST['gender']
+#         gnam=request.POST['grade']
+#         gnam=userClass.objects.get(id=gnam)
+#         pnam=request.POST['Pname']
+#         email=request.POST['email']
+#         cn=request.POST['Contactno']
+#         pimage = request.FILES['image']
+#         stu=Student(Studentname=sname,
+#             DOB=dob,
+#             Gender=gender,
+#             Grade=gnam,
+#             Parentname=pnam,
+#             email=email,
+#             contactno=cn,
+#             simage=pimage,
+#             )
+#         stu.save()
+#         print('success')
+#         return redirect('userlogin')
+#     ve=userClass.objects.all()
+#     return render(request,'adds.html',{'e':ve} )
 
-# #Show Employee
-@login_required
-def show_s (request):
-    emp=Student.objects.all()
-    return render(request, 'shows.html',{'emp':emp})
-
-
+# # #Show Employee
+# @login_required
+# def show_s (request):
+#     emp=Student.objects.all()
+#     return render(request, 'shows.html',{'emp':emp})
 
 
-@login_required
-def edit (request,pk): 
-    stud=Student.objects.get(id=pk)
-    std=userClass.objects.get(id=pk)
-    return render(request, 'edits.html', {'stud': stud,'std':std})
-@login_required
-def edit_s(request,pk):
-    if request.method=='POST':
-        stud=Student.objects.get(id=pk)
-        stud.Studentname = request.POST.get('student')
-        stud.DOB = request.POST.get('dob')
-        stud.Gender = request.POST.get('gender')
-        stud.Grade = request.POST.get('grade')
-        stud.Parentname = request.POST.get('Pname')
-        stud.email=request.POST.get('email')
-        stud.contactno = request.POST.get('Contactno')
-        stud.simage=request.POST.get('image')
-        stud.save() 
-        print("successfully updated")
-        return redirect('show_s')
-    return render(request,'edits.html')
-@login_required
-def delete_s(request,pk):
-     stu=Student.objects.get(id=pk)
-     stu.delete()  
-     print("successfully deleted")
-     return redirect('show_s')
+
+
+# @login_required
+# def edit (request,pk): 
+#     stud=Student.objects.get(id=pk)
+#     std=userClass.objects.get(id=pk)
+#     return render(request, 'edits.html', {'stud': stud,'std':std})
+# @login_required
+# def edit_s(request,pk):
+#     if request.method=='POST':
+#         stud=Student.objects.get(id=pk)
+#         stud.Studentname = request.POST.get('student')
+#         stud.DOB = request.POST.get('dob')
+#         stud.Gender = request.POST.get('gender')
+#         stud.Grade = request.POST.get('grade')
+#         stud.Parentname = request.POST.get('Pname')
+#         stud.email=request.POST.get('email')
+#         stud.contactno = request.POST.get('Contactno')
+#         stud.simage=request.POST.get('image')
+#         stud.save() 
+#         print("successfully updated")
+#         return redirect('show_s')
+#     return render(request,'edits.html')
+# @login_required
+# def delete_s(request,pk):
+#      stu=Student.objects.get(id=pk)
+#      stu.delete()  
+#      print("successfully deleted")
+#      return redirect('show_s')
 
 #ADD TUTOR
 @login_required
@@ -234,7 +276,16 @@ def delete_t(request,pk):
 
 
 
+# @login_required
+# def profile(request):
+#     addresses = User.objects.filter(first_name=request.user)
+#     return render(request, 'profile.html',{'addresses':addresses})
+
+#     return render(request, 'profile.html',{'addresses':addresses})
 @login_required
 def profile(request):
-    addresses = User.objects.filter(first_name=request.user)
-    return render(request, 'profile.html',{'addresses':addresses})
+    stu = Student.objects.filter(user=request.user)
+    context = {
+        'stu': stu,
+         }        
+    return render(request, 'profile.html', context)

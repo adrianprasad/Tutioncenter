@@ -6,45 +6,39 @@
        
         
 
-    <form action="" method="post" >
-        {% csrf_token %}
-        
-        <nav class=" navbar-light bg-light">
-           
-            <div class="topnav">
-            {% if user.is_superuser %}
-            <a href="{% url 'addc' %}">add classes</a>
-            <a href="{% url 'addt' %}">add tutor</a>
-            <a href="{% url 'show_s' %}">show students</a>
-            <a href="{% url 'userlogout' %}">log out</a>
-            {% else %}
-                
-                {% if user.is_authenticated %}
-                <a class="active"href="{% url 'home' %}">HOME</a>
-                <a href="{% url 'profile'  %}">My profile</a>
-                <a href="{% url 'userlogout' %}">log out</a>
-               
-                {% else %}
-                <a class="active"href="{% url 'home' %}">HOME</a>
-                
-                <a href="{% url 'signup' %}">SIGNUP</a>
-                <a href="{% url 'loginpage' %}">LOGIN</a>
-                {% endif %}
-            {% endif %}   
-            </div>
-        </nav>
+    
                 
 
     <div class="container py-5">
       
 
         <div class="jumbotron">
-          <h2>welcome</h2>
+          <h1>welcome</h1>
           <h4>{{request.user.first_name}} {{request.user.last_name}} </h4>
           <h4>{{request.user.email}}  </h4>
-          
+          {% for i in stu %}
+          <br>
+          <h3>Your Profile </h3><br>
+          <img src="{{i.simage.url}}" style="width:70px;height:100px"> <br>  
+          <h6>{{i.Studentname}} </h6> 
+          <h6>{{i.Gender}} </h6>
+          <h6>{{i.DOB}} </h6>
+          <h6>{{i.Grade}} </h6>
+          <h6>{{i.email}} </h6>
+          <h6>{{i.contactno}} </h6> <br><br>
+          <h3>Your Mentor </h3> 
+          <img src="{{i.Grade.tutor.timage.url}}"style="width:70px;height:100px"> <br>   
+          <h6 >{{i.Grade.tutor}}</h6>
+          <h6 >{{i.Grade.tutor.Qualification}}</h6>
+          <h6 >{{i.Grade.tutor.email}}</h6>
+          <h6 >{{i.Grade.tutor.contactno}}</h6><br><br>
+          <h3>Assignments </h3><br>
+          <img src="{{i.Grade.questionpaper.url}}" style="width:500px;height:850px"> 
+         
+          {% endfor %}
         </div>
         </div>
+        
 
             
 {%  endblock content %}

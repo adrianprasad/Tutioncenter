@@ -8,7 +8,9 @@
   </div>
   <div class="col-ma-4"></div>
  <div>
-<form action="edit_c" method="post" >
+<form method="post" action=""  enctype="multipart/form-data" >
+  <div class="col-ma-4"></div>
+ <div>
     {% csrf_token %} 
     {{form|crispy}}
     

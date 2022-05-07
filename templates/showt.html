@@ -2,8 +2,7 @@
 {% load static %}
 {% block content %}
  
-</head>
-<body> 
+
     <div class="container"> 
     <h1>Class Management System</h1>
     
@@ -12,14 +11,13 @@
             <tr>
               
                 <th> ID</th>
-                <th>STUDENT NAME</th>
+                <th>TUTOR NAME</th>
                 <th>DOB</th>
                 <th>GENDER</th>
                 <th>QUALIFICATION</th>
-                <th>GRADE</th>
                 <th>EMAIL</th>
                 <th>CONTACT NO</th>
-                
+                <th>IMAGE</th>
         
                 <th colspan="2">ACTION..</th>
             </tr>
@@ -32,10 +30,9 @@
         <td>{{products.DOB}}</td>
         <td>{{products.Gender}}</td>
         <td>{{products.Qualification}}</td>
-        <td>{{products.Grade}}</td>
         <td>{{products.email}}</td>
         <td>{{products.contactno}}</td>
-        
+        <td><img src="{{products.timage.url}}" style="width:70px;height:100px"></td>
         
         
 
